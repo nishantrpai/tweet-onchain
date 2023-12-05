@@ -1,5 +1,5 @@
 # Preview
-![img](https://i.imgur.com/aLcfo3k.png)
+![img](https://i.imgur.com/wJXz9Ng.png)
 
 # Idea:
 
