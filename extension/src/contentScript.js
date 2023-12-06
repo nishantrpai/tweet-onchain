@@ -1,5 +1,4 @@
 'use strict';
-const createMetaMaskProvider = require('metamask-extension-provider')
 
 let address = null;
 
