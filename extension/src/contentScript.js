@@ -1,10 +1,12 @@
 'use strict';
-
+const createMetaMaskProvider = require('metamask-extension-provider')
 
 let address = null;
 
 async function addCheckLogo() {
 
+  // add script to page
+  
   // select the post button
   // select span with text "Post"
   let postButton = Array.from(document.querySelectorAll('span')).filter(el => el.innerText === 'Post')[0];
@@ -39,5 +41,5 @@ async function addCheckLogo() {
 
 // wait 5 seconds after the page contents to load, then add the check logo
 window.addEventListener('load', function () {
-  setTimeout(addCheckLogo, 2000);
+  setTimeout(addCheckLogo, 5000);
 });

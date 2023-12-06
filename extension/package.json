@@ -22,6 +22,9 @@
     "webpack-merge": "^5.10.0"
   },
   "dependencies": {
-    "@wagmi/core": "^1.4.8"
+    "@wagmi/core": "^1.4.8",
+    "metamask-extension-provider": "^3.0.0",
+    "process": "^0.11.10",
+    "stream": "^0.0.2"
   }
 }
