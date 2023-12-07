@@ -1,8 +1,5 @@
 console.log('main.js');
 
-
-function signTweet() {
-
+document.querySelector('[data-check="true"]').parentElement.onclick = function() {
+  console.log('clicked');
 }
-
-setTimeout(signTweet, 5000);

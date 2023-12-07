@@ -56,18 +56,6 @@ async function addCheckLogo() {
 // Log `title` of current active web page
 
 // Communicate with background file by sending a message
-chrome.runtime.sendMessage(
-  {
-    type: 'GET_CURRENT_URL',
-    payload: {
-      message: 'Hello, my name is Con. I am from ContentScript.',
-    },
-  },
-  (response) => {
-    let { url } = response;
-    injectScript(url, 'body');
-  }
-);
 
 // wait for the page to load
 // Listen for message
@@ -84,5 +72,21 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 
 document.addEventListener('DOMContentLoaded', function() {
   console.log('dom loaded');
-  setTimeout(addCheckLogo, 2000);
+  chrome.runtime.sendMessage(
+    {
+      type: 'GET_CURRENT_URL',
+      payload: {
+        message: 'Hello, my name is Con. I am from ContentScript.',
+      },
+    },
+    (response) => {
+      let { url } = response;
+      if(!url) return;
+      setTimeout(() => {
+        addCheckLogo();
+        injectScript(url, 'body');
+      }, 3000);
+    }
+  );
+  
 });
