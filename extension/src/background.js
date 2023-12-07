@@ -18,4 +18,9 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
       message,
     });
   }
+  if(request.type == 'GET_CURRENT_URL') {
+    let url = chrome.runtime.getURL('js/main.js');
+    sendResponse({url});
+  }
+
 });
